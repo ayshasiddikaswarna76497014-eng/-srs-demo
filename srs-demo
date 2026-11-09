@@ -1,0 +1,201 @@
+Arduino Smart Parking System
+
+An Arduino-based Smart Parking System that uses IR sensors, a servo motor, and a 16x2 I2C LCD to automate vehicle entry/exit and display the number of available parking slots.
+
+📌 Project Overview
+
+The system is designed to manage a small parking area with 4 parking slots.
+
+It uses:
+
+Arduino UNO -- Main microcontroller
+
+2 IR Sensors -- Detect vehicles at entry and exit
+
+Servo Motor -- Controls the parking gate
+
+16x2 I2C LCD -- Displays parking status
+
+4 Parking Slots -- Initial available slot count
+
+When a vehicle is detected at the entrance, the system checks whether a slot is available. If a slot is available, the gate opens and the available slot count decreases. When a vehicle exits, the gate opens and the available slot count increases.
+
+✨ Features
+
+Automatic parking gate control
+
+Entry vehicle detection
+
+Exit vehicle detection
+
+Real-time available slot display
+
+Parking-full notification
+
+LCD welcome/status message
+
+Servo-controlled gate
+
+Simple and low-cost hardware implementation
+
+🛠️ Hardware Components
+
+Component Quantity
+
+Arduino UNO 1 16x2 I2C LCD 1 IR Sensor Module 2 Servo Motor 1 Jumper Wires As required Breadboard 1 Power Supply/USB Cable 1
+
+🔌 Pin Configuration
+
+Component Arduino Pin
+
+Entry IR Sensor D2 Exit IR Sensor D3 Servo Motor D4 I2C LCD SDA A4 I2C LCD SCL A5
+
+The I2C LCD address used in the code is 0x27.
+
+💻 Software Requirements
+
+Arduino IDE
+
+Arduino UNO board package
+
+Wire library
+
+LiquidCrystal_I2C library
+
+Servo library
+
+📂 Project Structure
+
+system-parking-car/ │ ├── system-parking-car.ino ├── README.md └── SRS/ └── SRS.pdf
+
+📄 Software Requirements Specification (SRS)
+
+The complete Software Requirements Specification (SRS) document for this project will be added here.
+
+SRS Document
+
+[SRS Document -- To Be Added]
+
+Place the SRS PDF inside the SRS folder and name it:
+
+SRS.pdf
+
+Then change the link above to:
+
+View SRS Document
+
+⚙️ How the System Works
+
+Entry Process
+
+The entry IR sensor detects a vehicle.
+
+The Arduino checks the number of available slots.
+
+If a slot is available, the servo opens the gate.
+
+The available slot count decreases by 1.
+
+The LCD displays the updated number of available slots.
+
+The gate closes after the vehicle passes the detection sequence.
+
+Exit Process
+
+The exit IR sensor detects a vehicle.
+
+The servo opens the gate.
+
+The available slot count increases by 1.
+
+The LCD displays the updated number of available slots.
+
+The gate closes after the vehicle passes the detection sequence.
+
+Parking Full
+
+When all parking slots are occupied, the LCD displays:
+
+SORRY :( Parking Full
+
+The gate remains closed.
+
+🚀 How to Run the Project
+
+Install Arduino IDE.
+
+Install the required libraries.
+
+Connect the hardware according to the pin configuration.
+
+Open system-parking-car.ino in Arduino IDE.
+
+Select:
+
+Tools → Board → Arduino UNO
+
+Tools → Port → Your Arduino COM Port
+
+Verify/compile the code.
+
+Upload the code to the Arduino UNO.
+
+Test the entry and exit sensors.
+
+🔧 Important Code Note
+
+The Arduino library headers should use the correct capitalization:
+
+#include <Wire.h> #include <LiquidCrystal_I2C.h> #include <Servo.h>
+
+Arduino library filenames are case-sensitive in some environments, so use the above form.
+
+📊 Initial System State
+
+The project starts with:
+
+Total Slots : 4 Available Slots: 4 Gate : Closed
+
+🎯 Project Objectives
+
+Reduce manual parking management.
+
+Automatically control the parking entrance and exit.
+
+Display available parking spaces.
+
+Prevent entry when the parking area is full.
+
+Demonstrate an IoT/embedded-system-based parking solution.
+
+🔮 Future Improvements
+
+Possible future versions can include:
+
+RFID-based vehicle identification
+
+Mobile/web parking reservation
+
+Automatic number-plate recognition
+
+Multiple parking zones
+
+Cloud database integration
+
+Real-time online parking availability
+
+Payment system
+
+ESP32/IoT connectivity
+
+Automatic parking history
+
+👨‍💻 Project
+
+Project Name: Arduino Smart Parking System Repository: system-parking-car
+
+This project is developed as an academic/project-based learning (PBL) project.
+
+📜 License
+
+This project is intended for educational and academic purposes.
